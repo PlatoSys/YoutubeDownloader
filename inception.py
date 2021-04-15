@@ -24,12 +24,11 @@ class Instance:
         if self.format == Format.MP3:
             return {
                 'format': 'bestaudio/best',
-                'preferredcodec': 'mp3'
-                # 'postprocessors': [{
-                #     'key': 'FFmpegExtractAudio',
-                #     'preferredcodec': 'mp3',
-                #     'preferredquality': '320',
-                # }],
+                'postprocessors': [{
+                    'key': 'FFmpegExtractAudio',
+                    'preferredcodec': 'mp3',
+                    'preferredquality': '192',
+                }],
             }
         return {}
 
