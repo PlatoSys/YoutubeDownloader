@@ -4,33 +4,36 @@ from strenum import StrEnum
 class Instance:
     """Create instance of video/sound"""
 
-    def __init__(self, url, form):
-        self.url = url
-        self.format = Format.create(data=form)
+    def __init__(self, url, form, video_id, title):
+        self._url = url
+        self._format = Format.create(data=form)
+        self._video_id = video_id
+        self._title = title
 
     @property
-    def get_url(self):
+    def url(self):
         """returns url"""
-        return self.url
+        return self._url
 
     @property
-    def get_format(self):
+    def format(self):
         """returns format"""
-        return self.format
+        return self._format
+
+    @property
+    def video_id(self):
+        """Returns video id"""
+        return self._video_id
+
+    @property
+    def title(self):
+        """returns video title"""
+        return self._title
 
     @property
     def options(self):
         """returns options for format"""
-        if self.format == Format.MP3:
-            return {
-                'format': 'bestaudio/best',
-                'postprocessors': [{
-                    'key': 'FFmpegExtractAudio',
-                    'preferredcodec': 'mp3',
-                    'preferredquality': '192',
-                }],
-            }
-        return {}
+        return {'outtmpl': f"downloads/{self.title}.{self.format}"}
 
 
 class Format(StrEnum):
