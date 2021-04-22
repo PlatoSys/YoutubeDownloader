@@ -1,3 +1,4 @@
+"""Inception module which contains Types and Classes"""
 from strenum import StrEnum
 
 
