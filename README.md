@@ -1,2 +1,2 @@
 # YoutubeDownloader
-Simple Youtube downloader written in Python
+Simple Youtube downloader written in Python EEL module
