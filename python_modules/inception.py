@@ -2,7 +2,7 @@
 from strenum import StrEnum
 import os
 import eel
-
+import time
 
 class Instance:
     """Create instance of video/sound"""
@@ -54,8 +54,11 @@ class Instance:
     def my_hook(self, progress):
         eel.update_progress(self.progress)
         if progress['status'] == 'finished':
+            time.sleep(1)
             file_tuple = os.path.split(os.path.abspath(progress['filename']))
             self.progress_update(100)
+            eel.finish_download()
+            time.sleep(1.5)
         if progress['status'] == 'downloading':
             percent = progress['_percent_str']
             percent = percent.replace('%', '')

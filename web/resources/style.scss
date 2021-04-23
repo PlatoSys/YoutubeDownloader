@@ -10,6 +10,7 @@ body {
   margin-top: 5px;
   flex-direction: column;
   .progress-bar-wrapper {
+    opacity: 0;
     display: flex;
     justify-content: center;
     .progress {
@@ -43,4 +44,10 @@ body {
       }
     }
   }
+}
+
+.modal-body {
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }

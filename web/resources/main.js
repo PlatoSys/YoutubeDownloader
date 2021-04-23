@@ -19,13 +19,25 @@ async function postData(url = "https://httpbin.org/post", data = {}) {
   return response.json();
 }
 
+function callEndpoint() {
+  setTimeout(function(){
+      document.querySelector('#dismiss-modal').click();
+  }, 1000);
+}
+
 function update_progress(percent) {
+  percent = parseInt(percent)
   let bar = document.querySelector("#progress");
-  bar.style.display = 'flex';
+  let wrapper = document.querySelector('#wrapper-bar');
   bar.style.width = `${percent}%`;
-  if (percent === 100){
-    bar.style.display = 'none'
-  }
+  wrapper.style.opacity = "100%";
+}
+ function finish_download(){
+    document.querySelector('#modal-button').click();
+    callEndpoint();
 }
 
 window.eel.expose(update_progress);
+window.eel.expose(finish_download);
+
+

@@ -19,6 +19,7 @@ body {
 }
 
 body .progress-bar-wrapper {
+  opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,5 +79,15 @@ body .main-section .main .main-bar form .button {
 body .main-section .main .main-bar form .button button {
   background-color: #e94b3cff;
   width: 100%;
+}
+
+.modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */
