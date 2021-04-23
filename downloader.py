@@ -1,8 +1,6 @@
 """Downloading Module"""
 from __future__ import unicode_literals
-from inception import Instance, Format
-from moviepy.editor import *
-import time
+from python_modules.inception import Instance
 import eel
 import youtube_dl
 

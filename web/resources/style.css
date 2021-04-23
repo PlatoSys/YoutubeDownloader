@@ -11,10 +11,53 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 250px;
+  margin-top: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-body .main {
+body .progress-bar-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .progress-bar-wrapper .progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 500px;
+}
+
+body .main-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .main-section .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 250px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .main-section .main .main-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,15 +67,15 @@ body .main {
   width: 500px;
 }
 
-body .main form {
+body .main-section .main .main-bar form {
   width: 100%;
 }
 
-body .main form .button {
+body .main-section .main .main-bar form .button {
   width: 100%;
 }
 
-body .main form .button button {
+body .main-section .main .main-bar form .button button {
   background-color: #e94b3cff;
   width: 100%;
 }

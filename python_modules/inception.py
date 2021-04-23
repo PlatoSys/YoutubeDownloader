@@ -1,5 +1,7 @@
 """Inception module which contains Types and Classes"""
 from strenum import StrEnum
+import os
+import eel
 
 
 class Instance:
@@ -10,6 +12,7 @@ class Instance:
         self._format = Format.create(data=form)
         self._video_id = video_id
         self._title = title
+        self._progress = 0
 
     @property
     def url(self):
@@ -32,9 +35,31 @@ class Instance:
         return self._title
 
     @property
+    def progress(self):
+        """returns progress"""
+        return self._progress
+
+    def progress_update(self, value):
+        self._progress = value
+
+    @property
     def options(self):
         """returns options for format"""
-        return {'outtmpl': f"downloads/{self.title}.{self.format}"}
+        return {
+            'outtmpl': f"downloads/{self.title}.{self.format}",
+            'progress_hooks': [self.my_hook],
+        }
+
+    @eel.expose
+    def my_hook(self, progress):
+        eel.update_progress(self.progress)
+        if progress['status'] == 'finished':
+            file_tuple = os.path.split(os.path.abspath(progress['filename']))
+            self.progress_update(100)
+        if progress['status'] == 'downloading':
+            percent = progress['_percent_str']
+            percent = percent.replace('%', '')
+            self.progress_update(float(percent))
 
 
 class Format(StrEnum):
