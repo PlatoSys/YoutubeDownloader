@@ -56,8 +56,6 @@ Windows:
 .\env\Scripts\activate
 ```
 
-`
-
 ```html
 pip install -r requirements.txt
 ```
