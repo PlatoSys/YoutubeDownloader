@@ -1,4 +1,5 @@
 /venv
+/env
 /downloads
 ./idea
 ./__pycache__
