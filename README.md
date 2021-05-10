@@ -1,46 +1,62 @@
 # YoutubeDownloader
 
-Simple Youtube downloader written in Python EEL module
+## Simple Youtube downloader written in Python EEL module
 
 <a href="https://drive.google.com/uc?id=1XXAOtmYxNjGAF92ditKVS_tJGQW1OQy4&export=download">Download Package Here</a> and launch main application.
+
+---
+
+### Installation:
+
+Windows
 
 ```html
 py -m pip install --upgrade pip
 ```
 
-On macOS and Linux:
+Linux and macOS:
+
+```html
+python3 -m pip install --user --upgrade pip
+```
+
+Linux and macOS:
 
 ```html
 python3 -m pip install --user virtualenv
 ```
 
-On Windows:
+Windows:
 
 ```html
 py -m pip install --user virtualenv
 ```
 
-On macOS and Linux:
+Linux and macOS:
 
 ```html
 python3 -m venv env
 ```
 
+Windows:
+
 ```html
-On Windows: py -m venv env
+py -m venv env
 ```
 
-On macOS and Linux:
+Linux and macOS:
 
 ```html
 source env/bin/activate
 ```
 
-On Windows:
+Windows:
 
 ```html
 .\env\Scripts\activate
 ```
+
+`
 
 ```html
 pip install -r requirements.txt
